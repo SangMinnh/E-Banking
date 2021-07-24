@@ -3,7 +3,7 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, LogBox } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeStackScreen from "./src/screens/Home/HomeStackScreen";
 import NotiScreen from "./src/screens/NotiScreen";
@@ -20,6 +20,8 @@ import {
   Feather,
   MaterialIcons,
 } from "@expo/vector-icons";
+LogBox.ignoreAllLogs();
+
 const App = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
 

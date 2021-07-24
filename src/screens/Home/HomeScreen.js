@@ -93,7 +93,7 @@ const HomeScreen = ({ navigation }) => {
             ></Animatable.Image>
             <View>
               <Text style={{ fontSize: 16, color: "#465C5B" }}>
-                Chào buổi sáng
+                Chào buổi chiều
               </Text>
               <Text
                 style={{ fontSize: 20, fontWeight: "700", color: "#465C5B" }}

@@ -192,7 +192,7 @@ const PayOk = ({ navigation, route }) => {
           >
             <Text style={styles.btnText}>VỀ TRANG CHỦ</Text>
           </TouchableOpacity>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => {
               // if (data) {
               //   navigation.push("SendIn", { id: data.id });
@@ -203,7 +203,7 @@ const PayOk = ({ navigation, route }) => {
             style={styles.btnSend}
           >
             <Text style={styles.btnText}>TIẾP TỤC CHUYỂN TIỀN</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
   btnView: {
     width: W,
     position: "absolute",
-    bottom: 20,
+    bottom: 60,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",

@@ -238,133 +238,6 @@ const ConfirmBill = ({ navigation, route }) => {
         </View>
       </View>
 
-      {/* <ImageBackground
-        source={require("../../../assets/BackGround.png")}
-        style={styles.bG}
-      >
-        <View style={styles.bill}>
-          <View style={styles.part1}>
-            <View
-              style={{
-                display: "flex",
-                width: 70,
-                height: 70,
-                backgroundColor: "rgba(0,224,200,.2)",
-                alignSelf: "center",
-                borderRadius: 999,
-                justifyContent: "center",
-              }}
-            >
-              <Entypo
-                name="check"
-                size={55}
-                color="#00E0C8"
-                style={{ alignSelf: "center" }}
-              />
-            </View>
-            <Text
-              style={{
-                marginBottom: 20,
-                marginTop: 10,
-                textAlign: "center",
-                fontSize: 24,
-                fontWeight: "700",
-                color: "#00E0C8",
-              }}
-            >
-              Chuyển tiền thành công
-            </Text>
-            <View style={styles.lineText}>
-              <Text style={[styles.prop, { textAlign: "left" }]}>
-                Số tiền chuyển
-              </Text>
-              <Text
-                style={[styles.prop, { fontWeight: "700", textAlign: "right" }]}
-              >
-                {"$" + " " + `${route.params.money}`}
-              </Text>
-            </View>
-            <View style={styles.lineText}>
-              <Text style={[styles.prop, { textAlign: "left" }]}>
-                Phí giao dịch
-              </Text>
-              <Text
-                style={[styles.prop, { fontWeight: "700", textAlign: "right" }]}
-              >
-                Miễn phí
-              </Text>
-            </View>
-          </View>
-          <ImageBackground
-            source={require("../../../assets/line.png")}
-            style={styles.line}
-          ></ImageBackground>
-          <View style={styles.part2}>
-            <View style={styles.lineText}>
-              <Text style={[styles.prop, { textAlign: "left" }]}>
-                Mã giao dịch
-              </Text>
-              <Text
-                style={[styles.prop, { fontWeight: "700", textAlign: "right" }]}
-              >
-                20201118181445
-              </Text>
-            </View>
-            <View style={styles.lineText}>
-              <Text style={[styles.prop, { textAlign: "left" }]}>
-                Tên người nhận
-              </Text>
-              <Text
-                style={[styles.prop, { fontWeight: "700", textAlign: "right" }]}
-              >
-                {`${route.params.fname} ${route.params.lname}`}
-              </Text>
-            </View>
-            <View style={styles.lineText}>
-              <Text style={[styles.prop, { textAlign: "left" }]}>
-                Ngân hàng thụ hưởng
-              </Text>
-              <Text
-                style={[styles.prop, { fontWeight: "700", textAlign: "right" }]}
-              >
-                {route.params.bank}
-              </Text>
-            </View>
-            <View style={styles.lineText}>
-              <Text style={[styles.prop, { textAlign: "left" }]}>
-                Số tài khoản
-              </Text>
-              <Text
-                style={[styles.prop, { fontWeight: "700", textAlign: "right" }]}
-              >
-                {route.params.cardNumber}
-              </Text>
-            </View>
-            <View style={styles.lineText}>
-              <Text style={[styles.prop, { textAlign: "left" }]}>Lời nhắn</Text>
-              <Text
-                style={[
-                  styles.prop,
-                  { fontWeight: "700", textAlign: "right", width: W / 2 - 35 },
-                ]}
-              >
-                {route.params.message}
-              </Text>
-            </View>
-          </View>
-        </View>
-      </ImageBackground> */}
-      {/* <BottomSheet
-        style={styles.bottomSheet}
-        ref={sheetRef}
-        snapPoints={[napSmall, napFull]}
-        renderContent={renderInner}
-        renderHeader={renderHeader}
-        initialSnap={1}
-        callbackNode={fall}
-        enabledGestureInteraction={true}
-      /> */}
-
       <Animatable.View
         animation="fadeInUpBig"
         style={{
@@ -429,7 +302,9 @@ const ConfirmBill = ({ navigation, route }) => {
           <TouchableOpacity
             style={{ flexDirection: "row", alignItems: "center" }}
             onPress={() => {
-              navigation.push("SendOk", { ...route.params });
+              const d = new Date();
+              const n = d.toLocaleString("vi-VN");
+              navigation.push("PayOk", { ...route.params, time: n });
               //console.log({ ...item, ...state });
 
               //navigation.push("SendOk");

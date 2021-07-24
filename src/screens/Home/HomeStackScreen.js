@@ -33,6 +33,7 @@ import {
   Feather,
   MaterialIcons,
 } from "@expo/vector-icons";
+import PayOk from "../PayAndTopup/PayOk";
 const HomeStack = createStackNavigator();
 const HomeStackScreen = ({ navigation, route }) => {
   const tabHiddenRoutes = [
@@ -45,6 +46,7 @@ const HomeStackScreen = ({ navigation, route }) => {
     "ChoosePay",
     "Topup",
     "ConfirmBill",
+    "PayOk",
   ];
   React.useLayoutEffect(() => {
     //const routeName = getFocusedRouteNameFromRoute(route);
@@ -307,6 +309,13 @@ const HomeStackScreen = ({ navigation, route }) => {
               />
             </TouchableOpacity>
           ),
+        }}
+      />
+      <HomeStack.Screen
+        name="PayOk"
+        component={PayOk}
+        options={{
+          headerShown: false,
         }}
       />
     </HomeStack.Navigator>
